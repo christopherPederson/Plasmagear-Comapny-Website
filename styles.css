@@ -1,0 +1,457 @@
+/* Made by Christopher Pederson of Plasmagear
+  Last updated: 2024-01-03
+  Version: 1.0.0
+
+  Note to admins:
+  This is the main CSS file for the website. It contains all of the CSS for the website, including the utility classes except for unique page components.
+  My deepest apologies for anyone forced to try and modify my horribly documented code... but thats what happens when you hire an intern to do an engineer's job.
+
+  if you need help contact me at: christopherjamespederson@gmail.com
+*/
+
+:root {
+    /* Colors */
+
+    --clr-primary-900: #3ea44e;
+    --clr-primary-400: #addbad;
+    --clr-primary-200: #f3fcf2;
+    --clr-primary-100: #f8fff8;
+
+    --clr-neutral-100: #ffff;
+    --clr-neutral-100-Opq: #ffffffc0;
+    --clr-neutral-100-Opqfilter: #ffffff99;
+    --clr-neutral-700: #2f4858;
+    --clr-primary-700-Opq: #2f4858c0;
+    --clr-neutral-900: #000000;
+
+    /* Globals */
+
+    --ff-primary: "Josefin Sans", sans-serif;
+
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-200: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.5rem;
+    --fs-700: 2rem;
+    --fs-900: 4rem;
+
+    --fs-body: var(--fs-400);
+    --fs-heading: var(--fs-700);
+    --fs-title: var(--fs-900);
+    --fs-button: var(--fs-400);
+    --fs-subHeading: var(--fs-500);
+    --fs-footer: var(--fs-200);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: var(--ff-primary);
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* A elements get no styles*/
+a,
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Utility Classes */
+
+.text-xs {
+    font-size: var(--fs-200);
+}
+.text-sm {
+    font-size: var(--fs-400);
+}
+.text-md {
+    font-size: var(--fs-500);
+}
+.text-lg {
+    font-size: var(--fs-700);
+}
+.text-xl {
+    font-size: var(--fs-900);
+}
+.weight-light {
+    font-weight: var(--fw-light);
+}
+.weight-regular {
+    font-weight: var(--fw-regular);
+}
+.weight-bold {
+    font-weight: var(--fw-bold);
+}
+.color-dark {
+    color: var(--clr-neutral-700);
+}
+.color-light {
+    color: var(--clr-neutral-100);
+}
+.color-medium {
+    color: var(--clr-primary-700-Opq);
+}
+.color-highlight {
+    color: var(--clr-primary-900);
+}
+
+.bg-white {
+    background-color: var(--clr-neutral-100);
+}
+.bg-white--opq {
+    background-color: var(--clr-neutral-100-Opq);
+}
+.bg-white--opqfilter {
+    background-color: var(--clr-neutral-100-Opqfilter);
+}
+.bg-primaryGreen {
+    background-color: var(--clr-primary-400);
+}
+.bg-lightGreen {
+    background-color: var(--clr-primary-200);
+}
+.bg-darkGreen {
+    background-color: var(--clr-primary-900);
+}
+.bg-darkBlue {
+    background-color: var(--clr-neutral-700);
+}
+
+.tile-border {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+button {
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 40px;
+}
+.button--primary {
+    background-color: var(--clr-neutral-700);
+    box-shadow: 0px 4px 4px var(--clr-neutral-700);
+    color: var(--clr-neutral-100);
+    text-wrap: nowrap;
+}
+.button--secondary {
+    color: var(--clr-neutral-700);
+    border: solid 2px var(--clr-neutral-700);
+}
+.button--tertiary {
+    color: var(--clr-neutral-100);
+    border: solid 2px var(--clr-neutral-100);
+}
+.verticalDivider {
+    width: 2px;
+    height: 60%;
+    border-radius: 1px;
+}
+.horizontalDivider {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--clr-neutral-700);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.horizontalDivider > div {
+    width: 30%;
+    height: 8px;
+    background-color: var(--clr-primary-900);
+    border-radius: 4px;
+}
+.horizontalWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.leftMargin--auto {
+    margin-left: auto;
+}
+.leftMargin--0 {
+    margin-left: 0px;
+}
+.leftMargin--10 {
+    margin-left: 10px;
+}
+.leftMargin--20 {
+    margin-left: 20px;
+}
+.rightMargin--auto {
+    margin-right: auto;
+}
+.rightMargin--0 {
+    margin-right: 0px;
+}
+.rightMargin--10 {
+    margin-right: 10px;
+}
+.rightMargin--20 {
+    margin-right: 20px;
+}
+.margin--0 {
+    margin: 0px;
+}
+.margin--5 {
+    margin: 5px;
+}
+.margin--10 {
+    margin: 10px;
+}
+.margin--20 {
+    margin: 20px;
+}
+.childMargin--10 * {
+    margin: 10px;
+}
+.padding--5 {
+    padding: 5px;
+}
+.padding--10 {
+    padding: 10px;
+}
+.padding--20 {
+    padding: 20px;
+}
+.padding--50 {
+    padding: 50px;
+}
+.leftPadding--5 {
+    padding: 5px;
+}
+.leftPadding--10 {
+    padding: 10px;
+}
+.leftPadding--20 {
+    padding: 20px;
+}
+.leftPadding--50 {
+    padding: 50px;
+}
+.rightPadding--5 {
+    padding: 5px;
+}
+.rightPadding--10 {
+    padding: 10px;
+}
+.rightPadding--20 {
+    padding: 20px;
+}
+.rightPadding--50 {
+    padding: 50px;
+}
+.height--fitContent {
+    height: fit-content;
+}
+.height--100vh {
+    height: 100vh;
+}
+.height--100pct {
+    height: 100%;
+}
+.height--70 {
+    height: 70px;
+}
+.height--100 {
+    height: 100px;
+}
+.height--150 {
+    height: 150px;
+}
+.height--200 {
+    height: 200px;
+}
+.height--300 {
+    height: 300px;
+}
+.width--70 {
+    width: 70px;
+}
+.width--100pct {
+    width: 100%;
+}
+.width--70pct {
+    width: 70%;
+}
+.width--50pct {
+    width: 50%;
+}
+.width--30pct {
+    width: 30%;
+}
+.width--25pct {
+    width: 25%;
+}
+.flex--centered {
+    display: flex;
+    align-items: center;
+}
+.flex--column {
+    flex-direction: column;
+}
+.justify--center {
+    justify-content: center;
+}
+.justify--spaceEvenly {
+    justify-content: space-evenly;
+}
+.justify--flexStart {
+    justify-content: flex-start;
+}
+.justify--flexEnd {
+    justify-content: flex-end;
+}
+.img--cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.txtAlign--center {
+    text-align: center;
+}
+
+/* Universal Stylings */
+
+header {
+    position: fixed;
+    gap: 2vw;
+
+    box-shadow: 0px 4px 10px var(--clr-neutral-700);
+}
+#header__servicesWrapper > a {
+    line-height: 70px;
+    height: 70px;
+}
+#dropdown {
+    position: fixed;
+    top: 70px;
+    left: 0px;
+
+    backdrop-filter: blur(10px);
+
+    transform: scaleY(0) translateZ(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+#dropdown li {
+    padding: 5px;
+    border-radius: 10px;
+}
+#dropdown li:hover {
+    background-color: var(--clr-neutral-700);
+    color: var(--clr-neutral-100);
+}
+#header__servicesWrapper:hover #dropdown {
+    transform: scaleY(1) translateZ(0);
+}
+.header__link:hover {
+    color: var(--clr-primary-900);
+}
+#info {
+    background-image: url(Content/White_background.webp);
+    background-attachment: fixed;
+}
+footer img {
+    aspect-ratio: 1/1;
+}
+
+/* tablet formatting */
+
+@media (max-width: 850px) {
+    .hideOnTablet {
+        display: none;
+    }
+    .horizontalWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sectionTitle--full,
+    .sectionTitle--half {
+        height: 200px;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .sectionTitle--full > button {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    footer {
+        height: 800px !important;
+    }
+}
+
+/* mobile formatting */
+
+@media only screen and (max-width: 500px) {
+    #info {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

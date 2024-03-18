@@ -1,0 +1,19 @@
+.employeeTile{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.employeeTile__imgWrapper{
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.employeeTile__imgWrapper img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}

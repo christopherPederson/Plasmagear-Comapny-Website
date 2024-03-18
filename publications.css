@@ -1,0 +1,12 @@
+
+
+/* mobile formatting */
+
+@media only screen and (max-width: 500px) {
+    #info {
+        font-size: var(--fs-200);
+    }
+    #info h1 {
+        font-size: var(--fs-500);
+    }
+}

@@ -1,0 +1,12 @@
+.list--checkmark li{
+    list-style:circle;
+}
+/* tablet formatting */
+
+@media (max-width: 850px) {
+    #info_serviceWrapper img {
+        width: 100% !important;
+    }
+}
+
+/* mobile formatting */

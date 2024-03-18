@@ -1,0 +1,19 @@
+.productTile {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.productTile__imgWrapper {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.productTile__imgWrapper img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}

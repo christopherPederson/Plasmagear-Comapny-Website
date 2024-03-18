@@ -1,0 +1,23 @@
+#banner {
+    height: calc(100vh - 70px);
+    background-image: url(Content/electro-spinning.gif);
+}
+
+/* tablet formatting */
+
+@media (max-width: 850px) {
+    #banner {
+        height: fit-content;
+    }
+}
+
+/* mobile formatting */
+
+@media only screen and (max-width: 500px) {
+    #banner {
+        height: 100vh;
+    }
+    #banner__textWrapper > h1 {
+        font-size: var(--fs-700);
+    }
+}
